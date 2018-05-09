@@ -1,0 +1,84 @@
+<!--
+<footer class="site-footer">
+    <a class="back-to-top scrollto" href="#top"></a>
+    <div class="container-lg">
+        <div class="row row-middle">
+            <div class="col-12 col-tablet-4">
+                <div class="footer-container">
+                    <div class="footer-social" style="display: block !important;">
+                        <div class="footer-social-item">
+                            {% if site.instagram_username %}
+                            <a class="footer-social-link icon icon-instagram-filled" target="_blank" style="display: inline-block !important;" href="https://instagram.com/{{ site.instagram_username }}"></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-tablet-4 text-center">
+                <div class="footer-container">
+                    <a class="contacts" style="display: block !important;" href="/contact">
+                        <span class="icon icon-fw icon-lg icon-mail"></span>
+                        <span>CONTACT</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-tablet-4 text-tablet-right">
+                <div class="footer-container">
+                    <div class="copy">© All rights reserved</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+ -->
+
+<footer class="footer">
+    2018 &copy; Nikola Boskovic. All rights reserved.
+</footer>
+
+
+
+<!-- 
+
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col footer-col-3">
+        <p>{{ site.description | escape }}</p>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        
+      </div>
+
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            Contact
+            </li>
+            {% if site.email %}
+            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            {% endif %}
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="post-meta">
+      {% if site.licence %}
+        <a rel="license" href={{ site.licence }} class="cc">
+        <img src="/images/cc-cc.png" height="16" class="cc">
+        <img src="/images/cc-by.png" height="16" class="cc">
+        </a>
+        This work is licensed under a <a rel="license" href={{ site.licence }}>Creative Commons License</a>
+      {% endif %}
+    </div>
+
+  </div>
+
+</footer>

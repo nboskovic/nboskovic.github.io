@@ -1,0 +1,345 @@
+---
+---
+
+/*
+* Custom variables
+*/
+$main-font: 'Lato', sans-serif;
+$sub-font: 'Montserrat', sans-serif;
+$fancy-font: 'Great Vibes', cursive;
+$font-size: 16px;
+ 
+$black: #000;
+$white: #FFF;
+$grey: #585c65;
+$mediumgrey: #9b9b9b;
+$lightgrey: #eeeeee;
+$blue: #3466a1;
+ 
+$padding: 10px;
+$margin: 10px;
+$border-radius: 4px;
+
+$theme-color-main: #000;
+$theme-color-main-contrast: #9b9b9b;
+
+/*
+* Import and override Bootstrap variables
+*/
+$font-family-sans-serif: $main-font;
+ 
+@import 'bootstrap';
+
+
+/*
+* Other custom settings, using Bootstrap variables
+*/
+/* custom variable */
+* {
+    position: relative;
+    box-sizing: border-box;
+}
+ 
+body {
+    color: $theme-color-main;
+    font-size: $font-size;
+}
+
+header {
+    max-height: 600px;
+    height: 600px;
+    overflow: hidden;
+    color: $white;
+
+    .background-image {
+        position: fixed;
+        top: 0px;
+        left: 50%;
+        margin-left: -600px;
+        width: 1200px;
+     
+        @media screen and (min-width: $screen-lg) {
+            top: auto;
+            left: auto;
+            margin: 0;
+            width: 100%;
+        }
+    }
+ 
+    h1, h2 {
+        width: 100%;
+        margin: 0;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 36px;
+        letter-spacing: 0.06em;
+        margin-bottom: $margin;
+ 
+        span {
+            display: block;
+ 
+            @media screen and (min-width: $screen-md) {
+                display: inline;
+            }
+        }
+    }
+ 
+    h2 {
+        font-size: 16px;
+        width: 70%;
+        margin: 0 auto;
+ 
+        @media screen and (min-width: $screen-lg) {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    .social {
+        position: absolute;
+        top: 55px;
+        right: 50px;
+        overflow: hidden;
+ 
+        a {
+            float: left;
+            width: 26px;
+            height: 26px;
+            margin: 0 5px;
+            text-indent: -9999px;
+            background: url(../images/social-sprite.png) no-repeat;
+            opacity: 0.8;
+ 
+            &:hover {
+                opacity: 1.0;
+            }
+ 
+            @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (-min-device-pixel-ratio: 2) {
+                background: url(../images/social-sprite@2x.png) no-repeat;
+                background-size: 76px 26px;
+            }
+ 
+            &.facebook {
+                background-position: 0px 0px;
+            }
+ 
+            &.twitter {
+                background-position: -25px 0px;
+            }
+ 
+            &.instagram {
+                background-position: -50px 0px;
+            }
+        }
+    }
+
+    .navbar-default .navbar-nav > li > a {
+  		color: $white;
+  		&:hover {
+	      	color: $grey;
+		}
+    }
+
+  	/*.navbar-nav-svg {
+        padding-top: 20px;
+  	}*/
+
+    .navbar {
+		transition: height .5s;
+		background: rgba($theme-color-main, 0.4);
+		border-color: rgba($theme-color-main, 0.4);
+		height: 60px;
+		letter-spacing: 0.5em;
+		color: $white;
+
+		/* @include media-breakpoint-up(lg) {
+		height: 5rem;
+		}*/
+		
+
+      	& .nav-item {
+	        padding-left: 1rem;
+	        padding-right: 1rem;
+	        padding-top: 25px;
+	        border-radius: $border-radius;
+	        /*background-color: $theme-color-main;
+	        transition: background-color 0.3s ease;*/
+			text-transform: uppercase;
+      	}
+
+		&-brand {
+			padding: 0;
+
+			/* @include media-breakpoint-up(lg) {
+			  font-size: 2.5rem;
+			}*/
+			&--mobile {
+			  float: right;
+			}
+		}
+
+		&-brand-image {
+		    max-width: 200px;
+		}
+    }
+}
+
+.fancy-font {
+    font-family: $fancy-font;
+}
+
+.instagram-wrap {
+    background: $theme-color-main;
+}
+ 
+.instagram-content {
+    h3 {
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        font-size: 26px;
+        font-weight: 700;
+        text-align: center;
+        padding: $padding*5 0;
+        color: darken($white, 20%);
+    }
+
+    .photo-box {
+        margin: 0 0 $margin*3 0;
+ 
+        .image-wrap {
+            img {
+                width: 100%;
+            }
+ 
+            .likes {
+            	font-family: $sub-font;
+            	font-size: 12px;
+                position: absolute;
+                bottom: 5px;
+                left: 15px;
+                padding: $padding/2;
+                background: rgba($theme-color-main, 0.4);
+                color: $lightgrey;
+            }
+        }
+        .description {
+            font-family: $sub-font;
+            font-size: 12px;
+            background: $theme-color-main;
+            color: $mediumgrey;
+            letter-spacing: 1px;
+            padding: $padding*1.5;
+            height: 75px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    } 
+}
+
+
+.contacts {
+    background: $theme-color-main;
+    padding: $padding*3 0;
+    text-align: center;
+    color: $mediumgrey;
+ 
+    @media screen and (min-width: $screen-lg) {
+        padding: $padding*10 0;
+    }
+ 
+    h4 {
+        font-size: 20px;
+        text-align: center;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        color: darken($white, 20%);
+    }
+    h3 {
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.3em;
+        font-size: 26px;
+        font-weight: 700;
+        text-align: center;
+        padding: $padding*5 0;
+        color: darken($white, 20%);
+    }
+ 
+    .about-text {
+        padding: $padding*1.5 $padding*3;
+ 
+        /*@media screen and (min-width: $screen-lg) {
+            width: 650px;
+            margin: 0 auto;
+        }*/
+    }
+ 	
+ 	&-address, &-email {
+		/*font-size: 16px;*/
+		padding: $padding*2;
+		border-radius: $border-radius;
+		background-color: $theme-color-main;
+		transition: background-color 0.3s ease;
+
+		/*@include media-breakpoint-up(md) {
+		font-size: 10px;
+		}*/
+
+		&:hover {
+			background-color: $theme-color-main-contrast;
+			/*align: center;*/
+			color: darken($theme-color-main, 50%);
+		}
+ 	}
+
+ 	/*& a {
+ 	  color: darken($theme-color-main, 50%);
+ 	  text-decoration: none;
+ 	}*/
+
+    .contact-now-btn {
+        display: inline-block;
+        width: 40%;
+        padding: $padding*1 $padding*1.5;
+        margin-top: $margin*1;
+        color: $white;
+        background: $grey;
+        font-size: 10px;
+        letter-spacing: 1px;
+        text-decoration: none;
+        text-transform: uppercase;
+ 
+        @media screen and (min-width: $screen-md) {
+            width: 40%;
+        }
+ 
+        @media screen and (min-width: $screen-lg) {
+            width: 20%;
+            margin-top: $margin*5;
+        }
+ 
+        &:hover {
+            background: lighten($grey, 5%);
+        }
+    }
+}
+
+.footer {
+    background: $theme-color-main;
+    padding: $padding $padding*4;
+    border-top: 0.1px solid $grey;
+    letter-spacing: 2px;
+    text-align: center;
+    color: $mediumgrey;
+    font-size: 13px;
+    text-transform: uppercase;
+ 
+    @media screen and (min-width: $screen-md) {
+        padding: $padding*2 0;
+    }
+}

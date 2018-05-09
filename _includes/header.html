@@ -1,0 +1,28 @@
+<header class="site-header">
+    
+    <img class="background-image" src="{{ site.front_img_path }}" alt="Background">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand fancy-font" href="/">
+            <img src="/images/estcado_white.png" alt="Estcado Tattoo" class="navbar-brand-image">
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">           
+            <li><a class="nav-item" href="#container-portfolio">Portfolio</a></li>
+            {% if site.instagram_username %}
+             <li><a class="nav-item" href="https://instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener" aria-label="Instagram">
+                {%- include icons/portfolio_white.svg class="navbar-nav-svg" -%}
+              </a></li>
+            {% endif %}
+            <li><a class="nav-item" href="#container-contacts">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</header>
